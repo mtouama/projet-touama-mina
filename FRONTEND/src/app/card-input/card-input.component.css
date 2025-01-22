@@ -1,0 +1,99 @@
+/* Conteneur global du formulaire */
+form {
+    background: linear-gradient(135deg, #ffd700, #ff4500);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    margin: 50px auto;
+    font-family: 'Comic Sans MS', sans-serif;
+    color: #fff;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Divs des champs */
+form div {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+    display: block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #ffeb3b;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Inputs */
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 3px dashed #ff4500;
+    border-radius: 15px;
+    background: #fff;
+    color: #000;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Effet survol des inputs */
+input:focus {
+    border-color: #ffd700;
+    box-shadow: 0 0 15px #ffd700;
+    transform: scale(1.05);
+}
+
+/* Messages d'erreur */
+div small, div div {
+    color: #ff4500;
+    font-size: 0.9rem;
+    margin-top: 5px;
+    display: block;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+/* Bouton */
+button {
+    background: #ff4500;
+    color: #fff;
+    font-size: 1.5rem;
+    padding: 10px 30px;
+    border-radius: 30px;
+    border: 3px solid #ffd700;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet hover bouton */
+button:hover {
+    background-color: #ff6347;
+    transform: scale(1.1) rotate(-3deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Désactivation du bouton */
+button:disabled {
+    background: #ccc;
+    color: #666;
+    border-color: #999;
+    cursor: not-allowed;
+}
+
+/* Liste des cartes */
+app-card-list {
+    margin-top: 30px;
+    font-size: 1.2rem;
+    color: #ffeb3b;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}

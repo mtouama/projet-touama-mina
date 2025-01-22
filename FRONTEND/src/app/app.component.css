@@ -1,0 +1,142 @@
+/* Global reset and setup */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body setup */
+body {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #f0f0f0;
+    color: #222;
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Navigation bar */
+nav {
+    background-color: #ff7f50;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+/* Style for each navigation link */
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for navigation links */
+nav a:hover {
+    transform: scale(1.1) rotate(5deg);
+    color: #fff2a1;
+}
+
+/* Main content styling */
+main {
+    background-color: #98fb98;
+    flex: 1;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: slideIn 2s ease-out forwards;
+    border-top: 5px dotted #ff7f50;
+}
+
+/* Keyframes for sliding animation */
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Centered heading */
+main h1 {
+    font-size: 3rem;
+    color: #ff6347;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    animation: textShake 1s ease-in-out infinite;
+}
+
+/* Keyframes for shaking heading animation */
+@keyframes textShake {
+    0% {
+        transform: rotate(-5deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Fun button styling */
+button {
+    background-color: #ff6347;
+    color: white;
+    font-size: 1.5rem;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 20px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Footer */
+footer {
+    background-color: #ff6347;
+    color: white;
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    animation: glow 1.5s ease-in-out infinite alternate;
+}
+
+/* Glowing effect for footer */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 10px #ff6347, 0 0 20px #ff6347;
+    }
+    100% {
+        text-shadow: 0 0 15px #ff6347, 0 0 25px #ff6347;
+    }
+}

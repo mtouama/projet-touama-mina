@@ -1,0 +1,13 @@
+<p class="search-property-text">Recherche selon : {{ activeSearchProperty }}</p>
+<div class="search-buttons">
+    <button (click)="setSearchProperty('ref')" class="search-btn">Ref</button>
+    <button (click)="setSearchProperty('titre')" class="search-btn">Titre</button>
+    <button (click)="setSearchProperty('prix')" class="search-btn">Prix</button>
+</div>
+<div class="search-input-container">
+<input 
+    type="text" 
+    (input)="onSearchChange($event)"
+    placeholder="Search..." 
+    class="search-input"/>
+</div>

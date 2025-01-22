@@ -1,0 +1,128 @@
+/* Style global pour le panier */
+.cart-container {
+    font-family: 'Comic Sans MS', sans-serif;
+    background-color: #fff3e6;
+    color: #333;
+    text-align: center;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out;
+}
+
+/* Animation d'apparition du panier */
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Titre du panier avec animation flashy */
+.cart-title {
+    font-size: 3rem;
+    color: #ff6347;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+    animation: bounceTitle 1s infinite alternate;
+}
+
+/* Animation du titre du panier */
+@keyframes bounceTitle {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Style du message "panier vide" */
+.empty-cart {
+    font-size: 1.5rem;
+    color: #ff6347;
+    font-weight: bold;
+    margin-top: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Style des éléments de produit dans le panier */
+.product-item {
+    background-color: #ffeb3b;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease;
+    animation: bounceCard 1s ease-in-out infinite alternate;
+}
+
+/* Animation des cartes produits */
+@keyframes bounceCard {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-10px); }
+}
+
+/* Détails du produit */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Image du produit avec un effet de zoom */
+.product-image {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 10px 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* Effet zoom sur l'image du produit */
+.product-image:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Style du bouton supprimer */
+.delete-button {
+    background-color: #ff6347;
+    color: white;
+    font-size: 2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Effet survol du bouton supprimer */
+.delete-button:hover {
+    background-color: #ff7f50;
+    transform: scale(1.2) rotate(15deg);
+}
+
+/* Icone de suppression */
+.delete-icon {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Effets de hover sur les éléments de produit */
+.product-item:hover {
+    transform: scale(1.05);
+    background-color: #ff9800;
+}
+
+/* Style des prix des produits */
+.product-item p {
+    font-size: 1.2rem;
+    color: #ff7f50;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}

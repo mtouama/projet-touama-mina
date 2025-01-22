@@ -1,0 +1,19 @@
+<form [formGroup]="registerForm" (ngSubmit)="onRegister()">
+  <div>
+    <label for="newlogin">Pseudo</label>
+    <input id="newlogin" type="text" formControlName="newlogin" />
+  </div>
+  <div>
+    <label for="newnom">Nom</label>
+    <input id="newnom" type="text" formControlName="newnom" />
+  </div>
+  <div>
+    <label for="newprenom">Prénom</label>
+    <input id="newprenom" type="text" formControlName="newprenom" />
+  </div>
+  <div>
+    <label for="newpassword">Mot de passe</label>
+    <input id="newpassword" type="password" formControlName="newpassword" />
+  </div>
+  <button type="submit">S'enregistrer</button>
+</form>

@@ -1,0 +1,12 @@
+<input type="text" [(ngModel)]="searchTerm" placeholder="Search by card holder" />
+
+<div *ngFor="let card of (cards$ | async | cardFilter:searchTerm); let i = index">
+  <div>
+    <p>Card Number: {{ card.cardNumber | slice:0:4 }} **** **** {{ card.cardNumber | slice:-4 }}</p>
+    <p>Card Holder: {{ card.cardName }}</p>
+    <p>Expiry Date: {{ getFormattedDate(card.expiryDate) }}</p>
+    <p>CVV: {{ card.cvv | slice:0:1 }}**</p>
+    <button (click)="editCard(i)">Edit</button>
+    <button (click)="deleteCard(i)">Delete</button>
+  </div>
+</div>

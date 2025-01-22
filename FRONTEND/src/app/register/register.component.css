@@ -1,0 +1,99 @@
+/* Style global pour le formulaire */
+form {
+    background-color: #ffeb3b;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    max-width: 400px;
+    margin: 50px auto;
+    font-family: 'Comic Sans MS', sans-serif;
+    text-align: center;
+    animation: popIn 1s ease-out;
+}
+
+/* Animation d'apparition */
+@keyframes popIn {
+    0% { transform: scale(0.8); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* Style des divs contenant les champs */
+form div {
+    margin-bottom: 20px;
+}
+
+/* Style des labels */
+label {
+    font-size: 1.2rem;
+    color: #ff6347;
+    font-weight: bold;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    display: block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Style des inputs */
+input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    font-size: 1.1rem;
+    border: 3px dashed #ff6347;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Effet focus sur les inputs */
+input:focus {
+    border-color: #ff9800;
+    box-shadow: 0 0 15px #ff9800;
+    transform: scale(1.05);
+}
+
+/* Style du bouton */
+button {
+    background-color: #ff6347;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 30px;
+    border-radius: 50px;
+    border: 3px dashed white;
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Effet survol bouton */
+button:hover {
+    background-color: #ff9800;
+    transform: scale(1.1) rotate(-5deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Effet de secousse sur bouton au clic */
+button:active {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Animation de secousse */
+@keyframes shake {
+    0% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    100% { transform: translateX(-5px); }
+}
+
+/* Ajout d'animation hover pour l'ensemble du formulaire */
+form:hover {
+    transform: rotate(1deg);
+    background: linear-gradient(45deg, #ffeb3b, #ff9800);
+    animation: hoverWobble 1s infinite alternate;
+}
+
+/* Animation wobble du formulaire */
+@keyframes hoverWobble {
+    0% { transform: rotate(1deg); }
+    100% { transform: rotate(-1deg); }
+}

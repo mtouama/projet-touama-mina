@@ -1,0 +1,37 @@
+<!-- <div>
+    <h2>Panier de Produits</h2>
+    
+    Affichage conditionnel si pas de produits -->
+    
+    <!-- Liste des produits
+    <div *ngFor="let product of products" class="product-item">
+      <span>{{ product.titre }}</span>
+      <span>{{ product.prix }}€</span>
+      <button (click)="delProduct(product.id)">Supprimer</button>
+    </div>
+</div> -->
+
+
+<!-- panier.component.html -->
+<div class="cart-container">
+  <h2 class="cart-title">Mon Panier</h2>
+  
+  <p class="empty-cart" *ngIf="isEmpty$()">
+    Votre panier est vide
+  </p>
+  
+  <div class="product-item" *ngFor="let product of products()">
+    <div class="product-details">
+      <h3>{{ product.titre }}</h3>
+      <img src="{{product.image_url}}" alt="{{product.titre}}" class="product-image">
+      <p>{{ product.prix | currency:'EUR' }}</p>
+    </div>
+    <button 
+      class="delete-button"
+      (click)="delProduct(product.id)"
+    >
+      <span class="delete-icon">×</span>
+    </button>
+  </div>
+  
+</div>

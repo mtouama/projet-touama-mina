@@ -1,0 +1,40 @@
+<form [formGroup]="cardForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="cardNumber">Card Number</label>
+      <input id="cardNumber" formControlName="cardNumber" type="text" appCardNumberFormat />
+      <div *ngIf="cardForm.get('cardNumber')?.invalid && cardForm.get('cardNumber')?.touched">
+        <div *ngIf="cardForm.get('cardNumber')?.errors?.['required']">Card number is required</div>
+        <div *ngIf="cardForm.get('cardNumber')?.errors?.['pattern']">Invalid card number</div>
+      </div>
+    </div>
+  
+    <div>
+      <label for="cardName">Card Holder</label>
+      <input id="cardName" formControlName="cardName" type="text" />
+      <div *ngIf="cardForm.get('cardName')?.invalid && cardForm.get('cardName')?.touched">
+        <div *ngIf="cardForm.get('cardName')?.errors?.['required']">Card holder is required</div>
+      </div>
+    </div>
+  
+    <div>
+      <label for="expiryDate">Expiry Date</label>
+      <input id="expiryDate" formControlName="expiryDate" type="text" placeholder="MM/YY" />
+      <div *ngIf="cardForm.get('expiryDate')?.invalid && cardForm.get('expiryDate')?.touched">
+        <div *ngIf="cardForm.get('expiryDate')?.errors?.['required']">Expiry date is required</div>
+        <div *ngIf="cardForm.get('expiryDate')?.errors?.['pattern']">Invalid expiry date</div>
+      </div>
+    </div>
+  
+    <div>
+      <label for="cvv">CVV</label>
+      <input id="cvv" formControlName="cvv" type="text" />
+      <div *ngIf="cardForm.get('cvv')?.invalid && cardForm.get('cvv')?.touched">
+        <div *ngIf="cardForm.get('cvv')?.errors?.['required']">CVV is required</div>
+        <div *ngIf="cardForm.get('cvv')?.errors?.['pattern']">Invalid CVV</div>
+      </div>
+    </div>
+  
+    <button type="submit" [disabled]="cardForm.invalid">Submit</button>
+  </form>
+
+  <app-card-list></app-card-list>
