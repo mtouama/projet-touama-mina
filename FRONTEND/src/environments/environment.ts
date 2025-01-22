@@ -3,8 +3,8 @@ export const environment = {
   backendCard: 'assets/mock/card.json',
   backendClient: 'assets/mock/product.json',
 
-  backendUserLogin: 'http://localhost:443/api/utilisateur/login',
-  backendUserRegister: 'http://localhost:443/api/utilisateur/register',
-  backendUserByToken: 'http://localhost:443//api/utilisateur',
-  backendProduit: 'http://localhost:443/api/catalogue/',
+  backendUserLogin: 'https://cnamappws.onrender.com/api/utilisateur/login',
+  backendUserRegister: 'https://cnamappws.onrender.com/api/utilisateur/register',
+  backendUserByToken: 'https://cnamappws.onrender.com/api/utilisateur',
+  backendProduit: 'https://cnamappws.onrender.com/api/catalogue/',
 };
