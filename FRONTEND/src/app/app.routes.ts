@@ -3,7 +3,6 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { AccountComponent } from './account/account.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { LoginComponent } from './login/login.component';
-import { AuthGuard } from './guards/auth.guard';
 import { provideRouter } from '@angular/router';
 import { PanierComponent } from './panier/panier.component';
 import { CardInputComponent } from './card-input/card-input.component';

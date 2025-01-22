@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AuthService } from '../service/auth.service';
 import { Router } from '@angular/router';
 import { ApiService } from '../service/api.service';
-import { User } from '../models/user';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';

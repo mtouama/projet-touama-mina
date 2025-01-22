@@ -2,14 +2,11 @@
 <app-search (search)="onSearch($event)"></app-search>
 
 <div *ngFor="let item of filteredProducts" class="product-card goofy-card">
-    <!-- Affichage de l'image du produit -->
     <img src="{{item.image_url}}" alt="{{item.titre}}" class="product-image kitsch-img">
 
-    <!-- Détails du produit -->
     <div class="product-details kitsch-details">
       <p class="product-name flashy-text">{{item.titre}}</p>
       <p class="product-price">{{item.prix}} €</p>
-      <!-- Bouton Ajouter au panier -->
       <button class="product-add-to-cart funky-button" (click)="addToShoppingCart(item)">Ajouter au panier</button>
     </div>
 </div>

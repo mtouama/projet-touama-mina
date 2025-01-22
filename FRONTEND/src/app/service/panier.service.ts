@@ -17,10 +17,6 @@ export class PanierService {
     );
   }
 
-  protected trackById(index: number, product: Product): number {
-    return product.id;
-  }
-
   getProductsPanier() {
     return this.products;
   }

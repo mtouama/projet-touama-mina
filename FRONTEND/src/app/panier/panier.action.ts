@@ -1,5 +1,4 @@
 import { Product } from "../models/product";
-import { ShoppingProduct } from "../models/shoppingProduct";
 
 export class AddProduct {
     static readonly type = '[Panier] Add'; 

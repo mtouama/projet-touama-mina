@@ -24,14 +24,6 @@ export class CardInputComponent implements OnInit {
       cvv: ['', [Validators.required, Validators.pattern('^[0-9]{3,4}$')]]
     });
   }
-
-  transformDate(date: string): string | null {
-    const parts = date.split('/');
-    if (parts.length === 2 && parts[1].length === 2) {
-      return `04/01/20${parts[1]}`; // Example transformation
-    }
-    return null; // Handle invalid format
-  }
   
 
   onSubmit(): void {

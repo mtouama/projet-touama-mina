@@ -5,7 +5,6 @@ import { Product } from '../models/product';
 import { Observable, Subscription } from 'rxjs';
 import { Input } from '@angular/core';
 import { ApiService } from '../service/api.service';
-import { AddProduct } from '../panier/panier.action';
 import { PanierService } from '../service/panier.service';
 
 
@@ -44,15 +43,13 @@ export class CatalogueComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    //products
     this.productsSubscription = this.apiService
       .getProducts()
       .subscribe((products) => {
         this.products = products;
-        this.filteredProducts = products; // Initialiser les produits filtrés avec tous les produits
+        this.filteredProducts = products; 
       });
 
-    // Souscrire pour écouter les changements de recherche
     if (this.searchObservable) {
       this.searchSubscription = this.searchObservable.subscribe((search) => {
         this.filteredProducts = this.products.filter((item: Product) => {

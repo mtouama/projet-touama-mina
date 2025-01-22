@@ -4,7 +4,6 @@ import { Injectable } from '@angular/core';
 import { Selector } from '@ngxs/store';
 import { Action } from '@ngxs/store';
 import { StateContext } from '@ngxs/store';
-import { ShoppingProduct } from '../models/shoppingProduct';
 import { AddProduct } from '../panier/panier.action';
 import { RemoveProduct } from '../panier/panier.action';
 
@@ -12,6 +11,12 @@ export interface PanierStateModel {
   produits: Product[];
 }
 
+/**
+ * Bonjour,
+ * Malheureusement, le store n'est pas encore ouvert
+ * Date d'ouverture : 09/2027
+ * A bientôt !
+ */
 
 @Injectable({
     providedIn: 'root'
@@ -32,23 +37,6 @@ export class PanierState {
     return state ? state.produits.length : 0;
   }
 
-//   @Action(AjoutPanier)
-//   add(
-//     { getState, patchState }: StateContext<PanierStateModel>,
-//     { payload }: AjoutPanier
-//   ) {
-//     const state = getState();
-//     patchState({
-//       produits: [
-//         ...state.produits,
-//         new ShoppingProduct(
-//           state.produits[state.produits.length - 1]?.id,
-//           payload
-//         ),
-//       ],
-//     });
-//   }
-
   @Action(AddProduct)
   add(ctx: StateContext<PanierStateModel>, action: AddProduct) {
     const state = ctx.getState();
@@ -67,14 +55,4 @@ export class PanierState {
     });
   }
 
-//   @Action(SupprPanier)
-//   del(
-//     { getState, patchState }: StateContext<PanierStateModel>,
-//     { payload }: SupprPanier
-//   ) {
-//     const state = getState();
-//     patchState({
-//       produits: state.produits.filter((el) => el.id !== payload.id),
-//     });
-//   }
 }

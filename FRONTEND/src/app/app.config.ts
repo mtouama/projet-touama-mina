@@ -10,7 +10,7 @@ import { routes } from './app.routes';
 export const appConfig: ApplicationConfig = {
   providers: [
     provideRouter(routes),
-    NgxsModule.forRoot([PanierState]).providers!, // Notez le .providers!
+    NgxsModule.forRoot([PanierState]).providers!,
     provideHttpClient(),
     ApiService,
     provideZoneChangeDetection({ eventCoalescing: true })
