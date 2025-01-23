@@ -29,7 +29,7 @@ export class ApiService {
     );
   }
 
-  registerUser(login: string, nom: string, prenom: string, password: string): Observable<any> {
+  registerUser(login: string, nom: string, prenom: string, password: string): Observable<LoginResponse> {
     let data: String;
     const httpOptions = {
       headers: new HttpHeaders({
@@ -94,55 +94,12 @@ export class ApiService {
   private produitSubject: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
   public produits$: Observable<Product[]> = this.produitSubject.asObservable();
 
-  public getProduits(name : string = "", type : string = "", price : number = 0) : Observable<Product[]> {
-    return this.http.get<Product[]>(environment.backendProduit).pipe(
-      map((produits: Product[]) => {
-        return produits.filter(produit => {
-          const matchesName = name ? produit.titre && this.normalize(produit.titre).includes(this.normalize(name)) : true;
-          const matchesType = type ? produit.ref && this.normalize(produit.ref).includes(this.normalize(type)) : true;
-          const matchesPrice = Number.isNaN(price) || price ? produit.prix !== undefined && produit.prix >= price : true;
-          return matchesName || matchesType || matchesPrice;
-        });
-      }),
-      map((filteredProduits: Product[]) => {
-        this.produitSubject.next(filteredProduits);
-        return filteredProduits;
-      })
-    );
-  }
 
-  public getProduitsIndividual(name : string = "", type : string = "", price : number = 0) : Observable<Product[]> {
-    return this.http.get<Product[]>(environment.backendProduit).pipe(
-      map((produits: Product[]) => {
-        return produits.filter(produit => {
-          const matchesName = name ? name !== "" && produit.titre && this.normalize(produit.titre).includes(this.normalize(name)) : true;
-          return matchesName;
-        });
-      }),
-      map((produits: Product[]) => {
-        return produits.filter(produit => {
-          const matchesType = type ? type !== "" && produit.ref && this.normalize(produit.ref).includes(this.normalize(type)) : true;
-          return matchesType;
-        });
-      }),
-      map((produits: Product[]) => {
-        return produits.filter(produit => {
-          const matchesPrice = price ? produit.prix !== undefined && produit.prix >= price : true;
-          return matchesPrice;
-        });
-      }),
-      map((filteredProduits: Product[]) => {
-        this.produitSubject.next(filteredProduits);
-        return filteredProduits;
-      })
-    );
-  }
+
 
   public getProducts() : Observable<Product[]>{
     return this.http.get<Product[]>(environment.backendProduit);
   }
 
-  private normalize(str: string) {
-    return str.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
-  }  
+ 
 }
