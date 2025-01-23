@@ -10,7 +10,7 @@ import { LoginResponse } from '../login/loginResponse';
   providedIn: 'root'
 })
 export class ApiService {
-  private tokenKey = 'authToken'; // Clé pour stocker le token dans localStorage
+  private tokenKey = 'authToken'; 
 
   constructor(private http:HttpClient) { }
 
@@ -43,7 +43,7 @@ export class ApiService {
   }
   
   
-  setToken(token: string): void { //pas besoin
+  setToken(token: string): void { 
     localStorage.setItem(this.tokenKey, token);
   }
 
@@ -53,42 +53,6 @@ export class ApiService {
 
   logout(): void {
     localStorage.removeItem(this.tokenKey);
-  }
-
-  getUserFromToken(): number | null {
-    const token = this.getToken();
-    if (token) {
-      // Décoder le token pour récupérer l'ID utilisateur (exemple simplifié)
-      const payload = JSON.parse(atob(token.split('.')[1])); // Attention : utilisez une lib comme jwt-decode pour une vraie application
-      return payload.id;
-    }
-    return null;
-  }
-
-  getUser(userId: number): Observable<any> {
-    return this.http.get<any>(`API_USER_URL/${userId}`);
-  }
-
-  public getUserv2(): Observable<User> {
-    let data: String;
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }),
-    };
-    data = 'token=' + localStorage.getItem('token');
-    return this.http.post<User>(environment.backendUserByToken, data, httpOptions);
-  }
-
-  public updateUser(client: User): Observable<User> {
-    let data: String;
-    let httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/x-www-form-urlencoded',
-      }),
-    };
-    data = 'token=' + localStorage.getItem('token') + '&firstname=' + client.prenom + '&lastname=' + client.nom + '&email=' + client.email + '&login=' + client.login + '&password=' + client.password;
-    return this.http.put<User>(environment.backendUserByToken, data, httpOptions);
   }
 
   private produitSubject: BehaviorSubject<Product[]> = new BehaviorSubject<Product[]>([]);
